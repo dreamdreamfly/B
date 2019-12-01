@@ -12,6 +12,8 @@
     <script>
         /*
         
+
+        new Promise.then().catch()(如果then里面有两个函数也就是说有失败的函数，catch就不会进了)正常情况下then只有一个成功函数，如果失败了就会进catch函数
         Promise->承诺
     
         使用方法：
@@ -33,7 +35,7 @@
         finally：不管成功还是失败都会进的回调函数
 
         正常情况下如果代码出现报错，报错下面的代码不会执行，但是使用try，catch那么try中的代码报错会进catch，报错是不会影响后面代码执行的
-        try{}catch{}
+        try{}catch(e){}(e是报错的日志)
 
         第一个then的返回值，就是第二个then的参数
         fetch（）.then（function（d）｛
