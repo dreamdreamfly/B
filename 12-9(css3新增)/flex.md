@@ -31,3 +31,39 @@
     - center：中间
     - space-between：两边挨着边框，中间间距均分
     - space-around：两边的间距比中间的间距少一半
+  - 项目的属性，写在自身上
+    - order：定义了项目的排列顺序，数值越小，排列越靠前，默认为0
+    - flex：给子集分配剩余的空间，按分数
+    - align-self:允许单个项目有与其他项目不一样的对齐方式，可以覆盖align-items属性，默认值为auto，表示继承父元素的aligin-items属性，如果没有父元素，则等同于stretch
+```
+ <style>
+    #box{
+        height: 500px;
+        width: 500px;
+        background:red;
+        display: flex;
+    }
+    div{
+        height: 50px;
+        width: 50px;
+        border:1px solid black;
+    }
+    #box :nth-child(2){
+        order: -1;
+        flex:2;
+        align-self:center
+    }
+    #box :nth-child(1),#box :nth-child(3){
+        
+        flex:1;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+     <div>1</div>
+     <div>2</div>
+     <div>3</div>
+
+    </div>
+```
